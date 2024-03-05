@@ -26,11 +26,11 @@ class StringSchema extends Schema
     /**
      * Содержится ли подстрока в строке
      *
-     * @param $substring
+     * @param string $substring
      *
      * @return $this
      */
-    public function contains($substring): self
+    public function contains(string $substring): self
     {
         $this->validators['contains'] = static function ($value) use ($substring) {
             return mb_strpos($value, $substring) !== false;

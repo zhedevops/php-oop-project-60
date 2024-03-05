@@ -28,11 +28,11 @@ abstract class Schema
     }
 
     /**
-     * @param $value
+     * @param mixed $value
      *
      * @return bool
      */
-    public function isValid($value): bool
+    public function isValid(?array $value): bool
     {
         foreach ($this->validators as $validator) {
             if (!$validator($value)) {
@@ -45,11 +45,11 @@ abstract class Schema
 
     /**
      * @param string $name
-     * @param ...$args
+     * @param mixed ...$args
      *
      * @return $this
      */
-    public function test(string $name, ...$args): self
+    public function test(string $name, ?array ...$args): self
     {
         $this->validators[$name] = function ($value) use ($name, $args) {
             $validator = $this->customValidators[$name];
