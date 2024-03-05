@@ -46,9 +46,9 @@ class ArraySchema extends Schema
      *
      * @return $this
      */
-    public function structure(array $schemas): self
+    public function shape(array $schemas): self
     {
-        $this->validators['structure'] = static function ($value) use ($schemas) {
+        $this->validators['shape'] = static function ($value) use ($schemas) {
             foreach ($schemas as $key => $schema) {
                 if (!$schema->isValid($value[$key])) {
                     return false;

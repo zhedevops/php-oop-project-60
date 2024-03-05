@@ -100,11 +100,11 @@ class ValidatorTest extends TestCase
     /**
      * Тест структуры массивов
      */
-    public function testStructure(): void
+    public function testShape(): void
     {
         $schema = $this->validator->array();
 
-        $schema->structure([
+        $schema->shape([
             'name' => $this->validator->string()->required(),
             'age' => $this->validator->number()->positive()
         ]);
