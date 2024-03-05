@@ -1,10 +1,10 @@
 <?php
 
-namespace Php\Validator;
+namespace Hexlet\Validator;
 
 /**
  * Class Schema
- * @package Php\Validator
+ * @package Hexlet\Validator
  */
 abstract class Schema
 {

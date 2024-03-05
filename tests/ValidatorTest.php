@@ -2,7 +2,7 @@
 
 namespace Php\Validator\Tests;
 
-use Php\Validator\Validator;
+use Hexlet\Validator\Validator;
 use PHPUnit\Framework\TestCase;
 
 /**

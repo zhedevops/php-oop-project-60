@@ -2,7 +2,7 @@
     "name": "hexlet/code",
     "autoload": {
         "psr-4": {
-            "Php\\Validator\\": "src/"
+            "Hexlet\\Validator\\": "src/"
         }
     },
     "autoload-dev": {

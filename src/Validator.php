@@ -1,11 +1,11 @@
 <?php
 
-namespace Php\Validator;
+namespace Hexlet\Validator;
 
 /**
  * Class Validator
  *
- * @package Php\Validator
+ * @package Hexlet\Validator
  */
 class Validator
 {

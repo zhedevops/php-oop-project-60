@@ -1,11 +1,11 @@
 <?php
 
-namespace Php\Validator;
+namespace Hexlet\Validator;
 
 /**
  * Class NumberSchema
  *
- * @package Php\Validator
+ * @package Hexlet\Validator
  */
 class NumberSchema extends Schema
 {
