@@ -17,7 +17,7 @@ class Validator
     /**
      * @return ArraySchema
      */
-    public function arrayValidator(): ArraySchema
+    public function array(): ArraySchema
     {
         return new ArraySchema($this->getCustomValidators('array'));
     }
@@ -25,7 +25,7 @@ class Validator
     /**
      * @return NumberSchema
      */
-    public function numberValidator(): NumberSchema
+    public function number(): NumberSchema
     {
         return new NumberSchema($this->getCustomValidators('number'));
     }
@@ -33,7 +33,7 @@ class Validator
     /**
      * @return StringSchema
      */
-    public function stringValidator(): StringSchema
+    public function string(): StringSchema
     {
         return new StringSchema($this->getCustomValidators('string'));
     }

@@ -32,7 +32,7 @@ class ValidatorTest extends TestCase
      */
     public function testString(): void
     {
-        $schema = $this->validator->stringValidator();
+        $schema = $this->validator->string();
 
         $this->assertTrue($schema->isValid(''));
 
@@ -56,7 +56,7 @@ class ValidatorTest extends TestCase
      */
     public function testNumbers(): void
     {
-        $schema = $this->validator->numberValidator();
+        $schema = $this->validator->number();
 
         $this->assertEquals(true, $schema->isValid(null));
 
@@ -82,7 +82,7 @@ class ValidatorTest extends TestCase
      */
     public function testArray(): void
     {
-        $schema = $this->validator->arrayValidator();
+        $schema = $this->validator->array();
 
         $this->assertEquals(true, $schema->isValid(null));
 
@@ -102,11 +102,11 @@ class ValidatorTest extends TestCase
      */
     public function testStructure(): void
     {
-        $schema = $this->validator->arrayValidator();
+        $schema = $this->validator->array();
 
         $schema->structure([
-            'name' => $this->validator->stringValidator()->required(),
-            'age' => $this->validator->numberValidator()->positive()
+            'name' => $this->validator->string()->required(),
+            'age' => $this->validator->number()->positive()
         ]);
 
         $this->assertEquals(true, $schema->isValid(['name' => 'Sasha', 'age' => 5]));
@@ -126,7 +126,7 @@ class ValidatorTest extends TestCase
 
         $this->validator->addValidator('string', 'startWith', $fn);
 
-        $schema = $this->validator->stringValidator()->test('startWith', 'O');
+        $schema = $this->validator->string()->test('startWith', 'O');
         $this->assertEquals(false, $schema->isValid('Php oop is best practice'));
         $this->assertEquals(true, $schema->isValid('Oops..'));
 
@@ -135,7 +135,7 @@ class ValidatorTest extends TestCase
         };
         $this->validator->addValidator('number', 'min', $fn);
 
-        $schema = $this->validator->numberValidator()->test('min', 10);
+        $schema = $this->validator->number()->test('min', 10);
         $this->assertEquals(false, $schema->isValid(9));
         $this->assertEquals(true, $schema->isValid(11));
     }
